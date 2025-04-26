@@ -57,7 +57,7 @@ std::vector<float> warpedMags(maxindex, 0.0f);
 
 //amplitude compensation: I sum the magnitude of every duplicated bins into warpedMags[] and then add them to the corresponding bin to avoid loss of amplitude -> check with the SC output meter
 for (int i = 0; i < numbins; ++i) {
-	warpedMags[int(table[i])] += p->bin[i].mag / 2; //avoid clipping
+	warpedMags[int(table[i])] += p->bin[i].mag / 4; //avoid clipping
 }
 
 for (int i = 0; i < int(numbins / 2); ++i) {
